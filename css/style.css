@@ -1,11 +1,25 @@
-/* =====================================================
-   PORTFOLIO ACADÉMIQUE - HAMDA AHMED SAID
-   ===================================================== */
+/* =========================================
+   PORTFOLIO ACADÉMIQUE
+   HAMDA AHMED SAID
+   DESIGN MODERNE ET RESPONSIVE
+========================================= */
 
+/* COULEURS ET PARAMÈTRES */
 
-/* =========================
-   1. RÉGLAGES GÉNÉRAUX
-========================= */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+    --dark: #0f172a;
+    --text: #475569;
+    --muted: #64748b;
+    --white: #ffffff;
+    --background: #f8fafc;
+    --border: #e2e8f0;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* RÉINITIALISATION */
 
 * {
     margin: 0;
@@ -15,13 +29,14 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f6f8fc;
-    color: #1f2937;
-    line-height: 1.7;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    line-height: 1.75;
 }
 
 a {
@@ -29,492 +44,466 @@ a {
 }
 
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
+.container {
+    width: min(1160px, 90%);
+    margin: 0 auto;
+}
 
-/* =========================
-   2. NAVIGATION
-========================= */
+/* =========================================
+   NAVIGATION
+========================================= */
 
-header {
-    position: relative;
-    width: 100%;
+.site-header {
+    position: sticky;
+    top: 0;
     z-index: 1000;
-
-    background: #ffffff;
-
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 3px 15px rgba(15, 23, 42, 0.04);
 }
 
-nav {
-    max-width: 1250px;
-    margin: auto;
-
-    padding: 18px 28px;
-
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    gap: 30px;
+    gap: 25px;
+    min-height: 82px;
 }
 
-nav h1 {
-    color: #2563eb;
-
-    font-size: 24px;
-    font-weight: 700;
-
+.logo {
+    color: var(--dark);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
     white-space: nowrap;
 }
 
-nav ul {
-    list-style: none;
+.logo span {
+    color: var(--primary);
+}
 
+.nav-links {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    gap: 20px;
-
     flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
 }
 
-nav ul li {
-    display: inline-block;
-}
-
-nav a {
-    color: #374151;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #2563eb;
-}
-
-
-/* =========================
-   3. SECTIONS
-========================= */
-
-section {
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding: 85px 25px;
-}
-
-section h2 {
-    color: #111827;
-
-    font-size: 34px;
-
-    text-align: center;
-
-    margin-bottom: 40px;
-}
-
-section h2::after {
-    content: "";
-
-    display: block;
-
-    width: 65px;
-    height: 4px;
-
-    margin: 12px auto 0;
-
-    background: #2563eb;
-
-    border-radius: 50px;
-}
-
-
-/* =========================
-   4. ACCUEIL
-========================= */
-
-#accueil {
-    max-width: none;
-
-    min-height: 82vh;
-
-    margin: 0;
-
-    padding-top: 90px;
-    padding-bottom: 90px;
-    padding-left: max(8%, 25px);
-    padding-right: max(8%, 25px);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(124, 58, 237, 0.10),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            rgba(37, 99, 235, 0.11),
-            rgba(255, 255, 255, 0.70)
-        );
-}
-
-#accueil .intro {
-    color: #2563eb;
-
+.nav-links a {
+    color: var(--dark);
     font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--primary);
+}
+
+/* =========================================
+   PAGE D'ACCUEIL
+========================================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #f8fafc 0%,
+        #eff6ff 55%,
+        #dbeafe 100%
+    );
+    padding: 100px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 65px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 12px;
     font-weight: 800;
-
-    letter-spacing: 3px;
-
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
     margin-bottom: 16px;
 }
 
-#accueil h2 {
-    max-width: 1000px;
-
-    margin-bottom: 18px;
-
-    color: #111827;
-
-    font-size: 52px;
-    line-height: 1.15;
-
-    text-align: left;
+.hero h1 {
+    font-size: clamp(34px, 4.4vw, 54px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
 }
 
-#accueil h2::after {
-    display: none;
+.hero h1 span {
+    display: block;
+    color: var(--primary);
 }
 
-#accueil h3 {
-    max-width: 900px;
-
-    margin-bottom: 22px;
-
-    color: #2563eb;
-
-    font-size: 23px;
+.hero h2 {
+    font-size: 20px;
     font-weight: 600;
-
-    line-height: 1.4;
+    color: #334155;
+    line-height: 1.5;
+    margin-bottom: 25px;
 }
 
-#accueil > p:not(.intro) {
-    max-width: 800px;
-
-    margin-bottom: 15px;
-
-    color: #4b5563;
-
-    font-size: 17px;
-
-    line-height: 1.8;
+.hero-text > p:not(.eyebrow) {
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 16px;
 }
 
-
-/* =========================
-   5. DOMAINES
-========================= */
+/* DOMAINES */
 
 .domaines {
-    max-width: 900px;
-
-    margin: 18px 0 27px;
-
     display: flex;
     flex-wrap: wrap;
-
-    gap: 12px;
+    gap: 10px;
+    margin-top: 25px;
 }
 
 .domaines span {
-    padding: 10px 16px;
-
-    background: #ffffff;
-
-    color: #374151;
-
-    border: 1px solid #dbeafe;
-
-    border-radius: 30px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.domaines span:hover {
-    transform: translateY(-2px);
-
-    border-color: #93c5fd;
-
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12);
-}
-
-
-/* =========================
-   6. BOUTON PRINCIPAL
-========================= */
-
-.btn-principal {
     display: inline-block;
+    background: var(--white);
+    border: 1px solid #bfdbfe;
+    color: var(--primary-dark);
+    padding: 8px 13px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
 
-    padding: 14px 25px;
+/* BOUTONS */
 
-    background: #2563eb;
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
 
-    color: #ffffff;
-
-    border-radius: 9px;
-
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 700;
-
-    box-shadow: 0 5px 16px rgba(37, 99, 235, 0.25);
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.btn-principal:hover {
-    background: #1d4ed8;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.30);
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
 }
 
-
-/* =========================
-   7. À PROPOS
-========================= */
-
-#apropos {
-    max-width: 900px;
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
 }
 
-#apropos p {
-    margin-bottom: 18px;
-
-    color: #4b5563;
-
-    font-size: 17px;
-
-    line-height: 1.9;
-
-    text-align: justify;
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
 }
 
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
 
-/* =========================
-   8. FORMATION
-========================= */
+/* PHOTO */
 
-#formation {
+.hero-photo {
+    flex: 0 0 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-frame {
+    width: 310px;
+    height: 310px;
+    padding: 8px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa,
+        #bfdbfe
+    );
+    box-shadow: 0 22px 55px rgba(37, 99, 235, 0.22);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 30%;
+    border: 5px solid var(--white);
+    background: var(--white);
+}
+
+/* =========================================
+   SECTIONS GÉNÉRALES
+========================================= */
+
+.section {
+    padding: 95px 0;
+}
+
+.section-alt {
+    background: var(--background);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.3;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 12px;
+}
+
+/* =========================================
+   À PROPOS
+========================================= */
+
+.about-card {
     max-width: 950px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 42px;
+    box-shadow: var(--shadow);
+}
+
+.about-card p {
+    color: var(--text);
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   FORMATION
+========================================= */
+
+.formation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
 }
 
 .formation-card {
-    margin-bottom: 22px;
-
-    padding: 28px;
-
-    background: #ffffff;
-
-    border: 1px solid #e5e7eb;
-    border-left: 5px solid #7c3aed;
-
-    border-radius: 14px;
-
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    background: var(--white);
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .formation-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+}
 
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
 .formation-card h3 {
-    margin-bottom: 10px;
-
-    color: #111827;
-
-    font-size: 22px;
+    font-size: 21px;
+    line-height: 1.4;
+    margin-bottom: 12px;
 }
 
 .formation-card p {
-    margin-bottom: 7px;
-
-    color: #4b5563;
+    color: var(--text);
+    margin-bottom: 12px;
 }
 
+.formation-card .institution {
+    color: var(--primary);
+}
 
-/* =========================
-   9. COMPÉTENCES
-========================= */
+.formation-card .date {
+    font-size: 14px;
+    color: var(--muted);
+}
 
-#competences {
-    max-width: 1100px;
+/* =========================================
+   COMPÉTENCES
+========================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
 }
 
 .competence-card {
-    margin-bottom: 18px;
-
-    padding: 25px;
-
-    background: #ffffff;
-
-    border: 1px solid #e5e7eb;
-    border-left: 5px solid #2563eb;
-
-    border-radius: 14px;
-
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    min-height: 210px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .competence-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.1);
 }
 
 .competence-card h3 {
-    margin-bottom: 8px;
-
-    color: #2563eb;
-
-    font-size: 21px;
+    font-size: 19px;
+    margin-bottom: 12px;
 }
 
 .competence-card p {
-    color: #4b5563;
+    color: var(--text);
+    font-size: 15px;
 }
 
+/* =========================================
+   PROJETS
+========================================= */
 
-/* =========================
-   10. PROJETS
-========================= */
-
-#projets {
-    max-width: 1200px;
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
-#projets article {
-    margin-bottom: 42px;
-
-    padding: 32px;
-
-    background: #ffffff;
-
-    border: 1px solid #e5e7eb;
-
-    border-radius: 18px;
-
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.07);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.3s;
 }
 
-#projets article:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.11);
+.project-card:hover {
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
 }
 
-#projets article h3 {
-    margin-bottom: 18px;
-
-    color: #111827;
-
-    font-size: 25px;
+.project-info {
+    padding: 38px;
 }
 
-#projets article p {
-    margin-bottom: 14px;
-
-    color: #4b5563;
-
-    font-size: 16px;
+.project-type {
+    color: var(--primary) !important;
+    font-size: 12px !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
+.project-info h3 {
+    font-size: clamp(22px, 2.5vw, 28px);
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
 
-/* =========================
-   11. GALERIE DES PROJETS
-========================= */
+.project-info > p {
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.technologies {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--primary-light);
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.technologies strong {
+    color: var(--dark);
+}
+
+/* LIENS DES PROJETS */
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.project-links a {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 11px 19px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.project-links a:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* GALERIES DES 9 IMAGES */
 
 .project-gallery {
-    margin: 28px 0;
-
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
+    padding: 0 38px 38px;
 }
 
 .project-gallery figure {
-    overflow: hidden;
-
     margin: 0;
-
-    background: #ffffff;
-
-    border: 1px solid #e5e7eb;
-
-    border-radius: 12px;
-
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.project-gallery figure:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
 }
 
 .project-gallery img {
     width: 100%;
-    height: 210px;
-
-    object-fit: cover;
-
-    transition: transform 0.35s ease;
+    height: 185px;
+    object-fit: contain;
+    background: #eaf1fb;
+    transition: transform 0.3s;
 }
 
 .project-gallery figure:hover img {
@@ -522,308 +511,250 @@ section h2::after {
 }
 
 .project-gallery figcaption {
-    padding: 11px 12px;
-
-    background: #ffffff;
-
-    color: #4b5563;
-
-    font-size: 14px;
-    font-weight: 600;
-
+    padding: 12px;
     text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
 }
 
+/* =========================================
+   PROJET D'ÉTUDES
+========================================= */
 
-/* =========================
-   12. BOUTONS DES PROJETS
-========================= */
+.studies-card {
+    max-width: 950px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--primary);
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
 
-.project-links {
-    margin-top: 20px;
+.studies-card p {
+    color: var(--text);
+    font-size: 16px;
+    margin-bottom: 18px;
+}
 
+.studies-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
+
+.contact-item {
     display: flex;
     flex-wrap: wrap;
-
     gap: 12px;
+    align-items: baseline;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    overflow-wrap: anywhere;
 }
 
-.project-links a {
-    display: inline-block;
+.contact-item:last-child {
+    border-bottom: none;
+}
 
-    padding: 11px 18px;
+.contact-item strong {
+    min-width: 105px;
+    color: var(--dark);
+}
 
-    background: #2563eb;
-
-    color: #ffffff;
-
-    border-radius: 8px;
-
+.contact-item a {
+    color: var(--primary);
     font-weight: 600;
-
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.20);
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
-.project-links a:hover {
-    background: #1d4ed8;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 7px 17px rgba(37, 99, 235, 0.27);
-}
-
-
-/* =========================
-   13. PROJET D'ÉTUDES
-========================= */
-
-#projet-etudes {
-    max-width: 900px;
-}
-
-#projet-etudes p {
-    margin-bottom: 18px;
-
-    color: #4b5563;
-
-    font-size: 17px;
-
-    line-height: 1.9;
-
-    text-align: justify;
-}
-
-#projet-etudes strong {
-    color: #2563eb;
-}
-
-
-/* =========================
-   14. CONTACT
-========================= */
-
-#contact {
-    max-width: 800px;
-
-    text-align: center;
-}
-
-#contact p {
-    margin: 14px 0;
-
-    color: #4b5563;
-
-    font-size: 17px;
-}
-
-#contact strong {
-    color: #111827;
-}
-
-#contact a {
-    color: #2563eb;
-
-    font-weight: 600;
-
-    transition: color 0.3s ease;
-}
-
-#contact a:hover {
-    color: #1d4ed8;
-
+.contact-item a:hover {
     text-decoration: underline;
 }
 
+.contact-item span {
+    color: var(--text);
+}
 
-/* =========================
-   15. FOOTER
-========================= */
+/* =========================================
+   PIED DE PAGE
+========================================= */
 
-footer {
-    padding: 30px 20px;
-
-    background: #111827;
-
-    color: #ffffff;
-
+.site-footer {
+    background: var(--dark);
+    color: #cbd5e1;
+    padding: 35px 20px;
     text-align: center;
+    font-size: 13px;
 }
 
-footer p {
-    margin: 5px 0;
-
-    color: #e5e7eb;
+.site-footer p + p {
+    margin-top: 8px;
 }
 
-footer p:last-child {
-    color: #9ca3af;
+/* =========================================
+   TABLETTES
+========================================= */
 
-    font-size: 14px;
-}
+@media (max-width: 1050px) {
 
-
-/* =========================
-   16. TABLETTES
-========================= */
-
-@media (max-width: 950px) {
-
-    nav {
+    .navbar {
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 
+    .nav-links {
+        justify-content: center;
         gap: 15px;
     }
 
-    nav ul {
-        justify-content: flex-start;
-
-        gap: 14px;
+    .hero-content {
+        gap: 35px;
     }
 
-    #accueil h2 {
-        font-size: 42px;
+    .hero-photo {
+        flex-basis: 250px;
     }
 
-    #accueil h3 {
-        font-size: 21px;
+    .photo-frame {
+        width: 250px;
+        height: 250px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .project-gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+/* =========================================
+   TÉLÉPHONES
+========================================= */
 
-/* =========================
-   17. TÉLÉPHONES
-========================= */
+@media (max-width: 700px) {
 
-@media (max-width: 650px) {
-
-    body {
-        font-size: 15px;
+    html {
+        scroll-padding-top: 150px;
     }
 
-    header {
-        position: relative;
+    .navbar {
+        gap: 12px;
     }
 
-    nav {
-        padding: 16px 18px;
-
-        flex-direction: column;
-        align-items: flex-start;
+    .logo {
+        font-size: 24px;
     }
 
-    nav h1 {
-        font-size: 21px;
+    .nav-links {
+        gap: 10px 14px;
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 9px;
-    }
-
-    section {
-        padding: 60px 18px;
-    }
-
-    section h2 {
-        margin-bottom: 30px;
-
-        font-size: 28px;
-    }
-
-    #accueil {
-        min-height: auto;
-
-        padding-top: 70px;
-        padding-bottom: 70px;
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-    #accueil .intro {
+    .nav-links a {
         font-size: 12px;
-
-        letter-spacing: 2px;
     }
 
-    #accueil h2 {
-        font-size: 34px;
+    .hero {
+        padding: 55px 0;
     }
 
-    #accueil h3 {
-        font-size: 19px;
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 35px;
     }
 
-    #accueil > p:not(.intro) {
-        font-size: 16px;
+    .hero-photo {
+        flex-basis: auto;
     }
 
-    .domaines {
-        flex-direction: column;
-
-        align-items: flex-start;
+    .photo-frame {
+        width: 220px;
+        height: 220px;
     }
 
-    .domaines span {
-        width: auto;
+    .hero h1 {
+        font-size: 35px;
+        letter-spacing: -0.5px;
     }
 
-    #apropos p,
-    #projet-etudes p {
-        font-size: 16px;
-
-        text-align: left;
+    .hero h2 {
+        font-size: 18px;
     }
 
-    .formation-card,
-    .competence-card {
-        padding: 21px;
+    .domaines,
+    .hero-buttons {
+        justify-content: center;
     }
 
-    #projets article {
-        padding: 22px;
-
-        border-radius: 14px;
+    .section {
+        padding: 65px 0;
     }
 
-    #projets article h3 {
-        font-size: 21px;
+    .section-heading {
+        margin-bottom: 30px;
     }
 
+    .formation-grid,
+    .skills-grid,
     .project-gallery {
         grid-template-columns: 1fr;
+    }
 
-        gap: 15px;
+    .about-card,
+    .formation-card,
+    .competence-card,
+    .studies-card,
+    .contact-card {
+        padding: 25px;
+    }
+
+    .project-info {
+        padding: 25px;
+    }
+
+    .project-gallery {
+        padding: 0 25px 25px;
     }
 
     .project-gallery img {
-        height: auto;
+        height: 210px;
     }
 
-    .project-links {
+    .contact-item {
         flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* ACCESSIBILITÉ */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    .project-links a {
-        width: 100%;
-
-        text-align: center;
-    }
-
-    #contact p {
-        font-size: 15px;
-
-        word-break: break-word;
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
